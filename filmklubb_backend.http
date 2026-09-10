@@ -1,0 +1,6 @@
+@filmklubb_backend_HostAddress = http://localhost:5071
+
+GET {{filmklubb_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
