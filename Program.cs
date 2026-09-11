@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using filmklubb_backend.Data;
+using filmklubb_backend.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,8 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<FilmklubbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<FileStorageService>();
 
 // CORS för Vites dev-server.
 const string DevCors = "DevCors";
