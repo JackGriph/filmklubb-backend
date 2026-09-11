@@ -116,7 +116,7 @@ public class MoviesController : ControllerBase
         return Ok(MovieResponseDto.FromMovie(movie));
     }
 
-        // POST /api/movies/5/image   (multipart/form-data)
+    // POST /api/movies/5/image   (multipart/form-data)
     [HttpPost("{id:int}/image")]
     public async Task<ActionResult<MovieResponseDto>> UploadImage(int id, IFormFile file)
     {
@@ -150,6 +150,29 @@ public class MoviesController : ControllerBase
         _fileStorage.Delete(previousImageUrl);
 
         return Ok(MovieResponseDto.FromMovie(movie));
+    }
+    
+        // DELETE /api/movies/5
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteMovie(int id)
+    {
+        var movie = await _context.Movies.FirstOrDefaultAsync(m => m.Id == id);
+
+        if (movie is null)
+        {
+            return NotFound();
+        }
+
+        // Sparas undan innan entiteten tas bort ur contexten.
+        var imageUrl = movie.ImageUrl;
+
+        _context.Movies.Remove(movie);
+        await _context.SaveChangesAsync();
+
+        // Filen raderas först när raden faktiskt är borta ur databasen.
+        _fileStorage.Delete(imageUrl);
+
+        return NoContent();
     }
 }
 
