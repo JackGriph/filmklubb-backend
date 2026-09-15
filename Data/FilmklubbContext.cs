@@ -60,6 +60,66 @@ public class FilmklubbContext : DbContext
                 Type = MediaType.Serie,
                 Watched = false,
                 CreatedAt = new DateTime(2026, 2, 20, 8, 45, 0, DateTimeKind.Utc)
+            },
+            new Movie
+            {
+                Id = 5,
+                Title = "Interstellar",
+                Type = MediaType.Film,
+                Watched = true,
+                Rating = 5,
+                Notes = "Grym story, ännu bättre score",
+                CreatedAt = new DateTime(2026, 2, 9, 8, 15, 0, DateTimeKind.Utc)
+            },
+            new Movie
+            {
+                Id = 6,
+                Title = "Nosferatu",
+                Type = MediaType.Film,
+                Watched = false,
+                Notes = "Spara till en mörk kväll.",
+                CreatedAt = new DateTime(2026, 3, 2, 19, 30, 0, DateTimeKind.Utc)
+            },
+            new Movie
+            {
+                Id = 7,
+                Title = "The Bear",
+                Type = MediaType.Serie,
+                Watched = true,
+                Rating = 5,
+                Notes = "Stressig på ett bra sätt. Kolla inte på tom mage.",
+                CreatedAt = new DateTime(2026, 3, 14, 11, 0, 0, DateTimeKind.Utc),
+                WatchedAt = new DateTime(2026, 4, 1, 22, 15, 0, DateTimeKind.Utc)
+            },
+            new Movie
+            {
+                Id = 8,
+                Title = "Past Lives",
+                Type = MediaType.Film,
+                Watched = true,
+                Rating = 4,
+                CreatedAt = new DateTime(2026, 4, 8, 16, 45, 0, DateTimeKind.Utc),
+                WatchedAt = new DateTime(2026, 4, 20, 20, 0, 0, DateTimeKind.Utc)
+            },
+            new Movie
+            {
+                Id = 9,
+                Title = "Andor",
+                Type = MediaType.Serie,
+                Watched = false,
+                Notes = "Sägs vara bra även om man skiter i Star Wars.",
+                CreatedAt = new DateTime(2026, 5, 3, 9, 0, 0, DateTimeKind.Utc)
+            },
+            new Movie
+            {
+                Id = 10,
+                Title = "Poor Things",
+                Type = MediaType.Film,
+                Watched = true,
+                Rating = 3,
+                Notes = "Snyggast i år, men lite för lång.",
+                CreatedAt = new DateTime(2026, 5, 22, 13, 20, 0, DateTimeKind.Utc),
+                WatchedAt = new DateTime(2026, 6, 2, 21, 30, 0, DateTimeKind.Utc)
             }
         );
     }
