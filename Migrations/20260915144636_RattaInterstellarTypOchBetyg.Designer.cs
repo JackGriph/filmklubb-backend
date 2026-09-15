@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using filmklubb_backend.Data;
 
@@ -10,9 +11,11 @@ using filmklubb_backend.Data;
 namespace filmklubb_backend.Migrations
 {
     [DbContext(typeof(FilmklubbContext))]
-    partial class FilmklubbContextModelSnapshot : ModelSnapshot
+    [Migration("20260915144636_RattaInterstellarTypOchBetyg")]
+    partial class RattaInterstellarTypOchBetyg
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.12");

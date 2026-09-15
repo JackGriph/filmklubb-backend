@@ -5,7 +5,7 @@ namespace filmklubb_backend.Models.Dtos;
 public class UpdateMovieDto : IValidatableObject
 {
     [Required(ErrorMessage = "Titel är obligatorisk.")]
-    [StringLength(200, MinimumLength = 1)]
+    [StringLength(200, ErrorMessage = "Titeln får vara högst 200 tecken.")]
     public string Title { get; set; } = string.Empty;
 
     public MediaType Type { get; set; }
